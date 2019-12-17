@@ -981,7 +981,7 @@ class IntroSliderState extends State<IntroSlider>
               ),
             ),
       child: Container(
-        margin: EdgeInsets.only(bottom: 60.0),
+        margin: EdgeInsets.only(bottom: 20.0),
         child: ListView(
           children: <Widget>[
             Container(
@@ -1001,7 +1001,7 @@ class IntroSliderState extends State<IntroSlider>
                   ),
               margin: marginTitle ??
                   EdgeInsets.only(
-                      top: 70.0, bottom: 50.0, left: 20.0, right: 20.0),
+                      top: 20.0, bottom: 20.0, left: 20.0, right: 20.0),
             ),
 
             // Image or Center widget
@@ -1031,7 +1031,7 @@ class IntroSliderState extends State<IntroSlider>
                     overflow: TextOverflow.ellipsis,
                   ),
               margin: marginDescription ??
-                  EdgeInsets.fromLTRB(20.0, 50.0, 20.0, 50.0),
+                  EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
             ),
           ],
         ),

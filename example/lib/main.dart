@@ -159,24 +159,78 @@ class IntroScreenState extends State<IntroScreen> {
   void initState() {
     super.initState();
 
-    slides.add(
-      new Slide(
-        title: "SCHOOL",
-        styleTitle: TextStyle(
-            color: Color(0xff3da4ab),
-            fontSize: 30.0,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'RobotoMono'),
-        description:
-            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
-        styleDescription: TextStyle(
-            color: Color(0xfffe9c8f),
-            fontSize: 20.0,
-            fontStyle: FontStyle.italic,
-            fontFamily: 'Raleway'),
-        pathImage: "images/photo_school.png",
+    slides.add(new Slide(
+      widgetTitle: Text(
+        'Crear cuadrantes',
       ),
-    );
+      backgroundColor: Colors.blueAccent,
+      widgetDescription: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Expanded(
+                flex: 6,
+                child: Container(
+                  width: 160.0,
+                  height: 320.0,
+                  child: Image.asset(
+                    'assets/other/cuadrantegif.gif',
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+
+                child: SizedBox(
+                  height: 5.0,
+                ),
+              ),
+              Expanded(
+                flex: 7,
+
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+//                                Text(
+//                                  'Crear lista de dias',
+//                                  style: SubHeadingStyles.black,
+//                                ),
+                    SizedBox(
+                      height: 5.0,
+                    ),
+                    Text(
+                      'Desde el menu cuadrante, creas una lista de dias para un turno completo que se repetira en el calendario.',
+                    ),
+                    SizedBox(
+                      height: 5.0,
+                    ),
+                    Text(
+                      'Si tu turno, por ejemplo, se repite cada 10 dias, tienes que hacer una lista con esos 10 dias.',
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 10.0),
+          Column(
+            children: <Widget>[
+              SizedBox(
+                height: 5.0,
+              ),
+              Text(
+                'Cuando tengas el listado de dias hecho, añades la fecha de inicio, esta es la fecha en la que se añadira el primer dia del cuadrante o lista que acabas de crear',
+              ),
+
+            ],
+          ),
+
+        ],
+      ),
+    ));
     slides.add(
       new Slide(
         title: "MUSEUM",
@@ -315,12 +369,7 @@ class IntroScreenState extends State<IntroScreen> {
       sizeDot: 13.0,
       typeDotAnimation: dotSliderAnimation.SIZE_TRANSITION,
 
-      // Tabs
-      listCustomTabs: this.renderListCustomTabs(),
-      backgroundColorAllSlides: Colors.white,
-      refFuncGoToTab: (refFunc) {
-        this.goToTab = refFunc;
-      },
+
 
       // Show or hide status bar
       shouldHideStatusBar: true,
